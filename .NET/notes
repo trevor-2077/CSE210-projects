@@ -1,0 +1,85 @@
+/*int, string, float, double, bool
+
+Console.WriteLine($)
+
+x ++    adds one to the integer incrementing by 1
+
+--x     increments first
+
+x += 10 vs x =+10
+
+||      or
+!       not
+
+While loop      need entrance and exit strategy
+
+Do While loop   only need exit strategey
+
+
+*/
+
+// using System;
+// using System.Security.Cryptography;
+// 
+// class Program
+// {
+    //    static void Main(string[] args)
+    // {
+    
+        // Console.WriteLine("Hello");
+
+        // int x = 10;
+
+        // if(x == 11);
+        // Console.WriteLine("Hey Bob");
+    // }
+
+    //for i in range(100);
+// 
+    // for (int i = 0; i < 10; i++)
+    // {
+        // Console.WriteLine(i);
+    // }
+// 
+    // int age = -1;
+
+    // while (age < 0 || age > 125)
+    // {
+        // Console.WriteLine("Please enter your age: ");
+        // age = int.Parse(Console.Readline());
+    // }
+// 
+// }
+// 
+// 
+    // for (int i = 0; i<= 32; ++i)
+        // {
+            // int powerNumber = (int)Math.Pow(2,i);
+            // Console.WriteLine($"2 to the power of (i), is: {powerNumber}");
+            // Console.WriteLine($", 0x{powerNumber.ToString{"X"}}");
+// }
+
+    List<int> myData = new List<int>();
+        myData.Add(1);
+        myData.Add(2);
+        myData.Add(3);
+        myData.Add(-100);
+        foreach(int i in myData)
+
+        {
+            Console.WriteLine(i);
+        }
+
+    static void DisplayGreeting()
+
+    {
+        Console.WriteLine("Hello Trevor");
+    }
+
+    static double AddNumber(int n1, int n2, double n3)
+        {
+            double total = n1 + n2 +n3;
+            return(total);
+        }
+    double total = AddNumber(10, 20);
+    Console.WriteLine total;
