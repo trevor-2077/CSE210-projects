@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -46,6 +47,29 @@ class Program
         {
             Console.WriteLine("Unfortunately you shall not pass! ...Feel free to try again");
         }
+
+        Console.WriteLine("What is your height in inches? ");
+        string height = Console.ReadLine();
+        int x = int.Parse(height);                  //Missed declaring x an int and () for Parse rather than {}
+
+        if (x > 48 && x < 78)                       // &&, ||, ==, != 
+        {
+            Console.WriteLine("You may ride");
+        }
+        else
+        {
+            Console.WriteLine("Sorry you may not ride");
+        }
+
+
+
+
+
+
+
+
+
+
     }
     
 }
