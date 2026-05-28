@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
 
     {
+        // Important Questions
         Console.Write("How are you today? ");
         string response = Console.ReadLine();
         Console.WriteLine($"{response}");
