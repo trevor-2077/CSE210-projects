@@ -27,5 +27,13 @@ class Program
 
         int largestNumber = numeros.Max();
         Console.WriteLine($"The largest number is: {largestNumber}");
+    
     }
 }
+
+
+// Console.WriteLine(words.Count);
+// for (int i = 0; i < words.Count; i++)
+// {
+    // Console.WriteLine(words[i]);
+// }
