@@ -1,25 +1,30 @@
-using System.Configuration.Assemblies;
+using System;
+using System.Collections.Generic;
 
-class JournalEntry
+public class JournalEntry
 
 {
-    string _date;
-
-    string _prompt;
-
-    string _response;
+    public string _date;
+    public string _prompt;
+    public string _response;
 
     string[] _prompts =
     {
-        "How are you feeling today?",
-        "who did you talk with today?"
+        "What was the highlight of your day?",
+        "what was something hard today?",
+        "What is something you learned?",
+        "What is a prompting you received today?",
+        "What is something you hope to accomplish in the future?"
     };
-
 
     public void CreateJournalEntry()
     {
+        Random _random = new Random();
         _date = DateTime.Now.ToShortDateString();
-        _prompt = _prompts[0];
+
+        int randomIndex = _random.Next(_prompts.Length);
+        _prompt = _prompts[randomIndex];
+
         Console.WriteLine(_prompt);
         _response = Console.ReadLine();
         
@@ -35,9 +40,10 @@ class JournalEntry
         return $"{_date}#{_prompt}#{_response}";
     }
 
-
-
-
-
-
+    public void Upload(string date, string prompt, string response)
+    {
+        _date = date;
+        _prompt = prompt;
+        _response = response; 
+    }
 }
