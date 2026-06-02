@@ -51,10 +51,6 @@ class Program
         return $"{name}, you will turn {2026 - BirthYr} this year";
     }
 
-
-
-
-
         // try
         // {
                 // Attempt to divide by zero
