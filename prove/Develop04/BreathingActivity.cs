@@ -7,7 +7,15 @@ class Breathing : BaseActivity
     public void RunActivity()
     {
         StartActivity();
-        RunCountDown("Breath in", 4);
-        RunCountDown("Breath out", 6);
+        
+        DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
+
+        while (DateTime.Now < endTime)
+        {
+            RunCountDown("Breath in", 4);
+            RunCountDown("Breath out", 6);
+        }
+
+        EndActivity();
     }
 }

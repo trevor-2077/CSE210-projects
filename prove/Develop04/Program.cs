@@ -4,13 +4,33 @@ class Program
 {
     static void Main(string[] args)
     {
-        // BaseActivity myActivity = new BaseActivity("Breathing", "This will help you breath");
-        // myActivity.StartActivity();
-        // myActivity.RunCountDown("Breath in", 10);
+        Console.WriteLine("1. Breathing");
+        Console.WriteLine("2. Reflection");
+        Console.WriteLine("3. Listing");
+        Console.WriteLine("4. Quit");
 
+        string choice = Console.ReadLine();
 
+        if (choice == "1")
+        {
+            Breathing myBreathingActivity =
+                new Breathing("This will help you to breathe better");
 
-        Breathing myBreathingActivity = new Breathing("This will help you breath better");
-        myBreathingActivity.RunActivity();
+            myBreathingActivity.RunActivity();
+        }
+
+        else if (choice == "2")
+        {
+            Reflection myReflectionActivity =
+                new Reflection("This will help you to reflect on your day");
+            myReflectionActivity.RunActivity();
+        }
+
+        else if (choice == "3")
+        {
+            Listing myListingActivity =
+                new Listing("List as many things the come to mind regarding");
+            myListingActivity.RunActivity();
+        }
     }
 }
