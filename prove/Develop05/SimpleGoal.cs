@@ -1,18 +1,19 @@
 class SimpleGoal : BaseGoal
 {
-    public SimpleGoal() : base()
-    {
-    }
+    public SimpleGoal() : base("SimpleGoal") {}
 
-    public override void CreateGoal()
-    {
-        SetName();
-        SetDescription();
-        SetNumberOfPoints();
-    }
+    public SimpleGoal(string name, string description, int points, bool status)
+        : base("SimpleGoal",name,description,points,status) {}
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        //
+        if (!Status)
+        {
+            Status = true;
+            Console.WriteLine($"Congratulations! You earned {NumberOfPoints} points!");
+            return NumberOfPoints;
+        }
+        Console.WriteLine("This goal has already been completed");
+        return 0;
     }
 }

@@ -7,46 +7,56 @@ abstract class BaseGoal
     private bool _status;
     private string _goalType;
 
-   
+    public string Name => _name;
+    public string Description => _description;
+    public string GoalType => _goalType;
+    public int NumberOfPoints => _numberOfPoints;
+    public bool Status 
+    { 
+        get => _status;
+        set => _status = value; 
+    }
 
-    public BaseGoal()
+    public BaseGoal(string goalType)
     {
         _name = "";
         _description = "";
         _status = false;
         _numberOfPoints = 0;
-        _goalType = "";
-        
+        _goalType = "";    
     }
 
-    protected void SetName()
+    public BaseGoal(string goalType, string name, string description, int points, bool status)
     {
-        Console.WriteLine("What is the name of your goal?");
+        _name = name;
+        _description = description;
+        _numberOfPoints = points;
+        _status = status;
+        _goalType = goalType;
+    }
+
+    public virtual void CreateGoal()
+    {
+        Console.WriteLine("What is the name of your goal? ");
         _name = Console.ReadLine();
-    }
-    
-    protected void SetNumberOfPoints()
-    {
-        Console.WriteLine("Enter number of points earned");
-        _numberOfPoints = Console.ReadLine();
+
+        Console.WriteLine($"Enter the description for the '{_name}' goal: ");
+        _description = Console.ReadLine();
+
+        Console.WriteLine("Enter the points association with this goal: ");
+        _numberOfPoints = int.Parse(Console.ReadLine());
     }
 
-    protected virtual string GetDisplayString()
+    public virtual string GetDisplayString()
     {
-        char statusMarker = ' ';
-        if (_status)
-        {
-            statusMarker = 'X';
-        }
-        return $"[(StatusMarker)] Name: {_name}, Description: {_description} points earned: {_numberOfPoints}";
+        char statusMarker = _status ? 'X' : ' ';
+        return $"[{statusMarker}] {_name} {_description}";
     }
 
-    public int MarkComplete()
-    {
-        _status = true;
-        return _numberOfPoints;
-    }
+    public abstract int RecordEvent();
 
-    public abstract void CreateGaol();
-    public abstract void RecordEvent();
-}
+    public virtual string GetStringRepresentation()
+    {
+        return $"{_goalType}:{_name},{_description},{_numberOfPoints},{_status}";
+    }
+}    
