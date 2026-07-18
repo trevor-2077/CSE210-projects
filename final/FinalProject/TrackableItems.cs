@@ -11,6 +11,6 @@ public abstract class TrackableItem
         _frequency = frequency;        
     }
 
-    public abstract void DisplayMenu();
+    public abstract void DisplayDashboardRow();
 
 }

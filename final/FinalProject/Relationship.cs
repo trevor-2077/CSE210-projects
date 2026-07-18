@@ -26,7 +26,7 @@ public class Relationship : TrackableItem
         }
     }
 
-    public override void DisplayMenu()
+    public override void DisplayDashboardRow()
     {
         Console.WriteLine($"[PEOPLE] {_itemName} {_frequency}) -> Import Date: {_importDate}. Total Notes: {_journalEntries.Count}");
     }
